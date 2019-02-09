@@ -43,6 +43,11 @@ class FirebaseAuthHelper: NSObject {
     
     /// Listener Object
     private var handler: AuthStateDidChangeListenerHandle?
+    
+    var userId: String? {
+        return Auth.auth().currentUser?.uid
+    }
+    
 }
 
 //MARK: - LISTENER
@@ -81,13 +86,13 @@ extension FirebaseAuthHelper {
     /// - Parameters:
     ///   - email: Email Address
     ///   - password: Password
-    func createUser(email: String, password: String, completion: ((_ success: Bool) -> Void)? = nil) {
+    func createUser(email: String, password: String, completion: ((_ error: Error?) -> Void)? = nil) {
         
         Auth.auth().createUser(withEmail: email, password: password) { (authResult, error) in
             // ...
             if let error = error {
                 print("Error: \(error.localizedDescription)")
-                completion?(false)
+                completion?(error)
             }
             else if let user = authResult?.user {
                 // The user's ID, unique to the Firebase project.
@@ -95,7 +100,7 @@ extension FirebaseAuthHelper {
                 // if you have one. Use getTokenWithCompletion:completion: instead.
                 
                 self.printUserDetails(user, withTag: "Create User")
-                completion?(true)
+                completion?(nil)
             }
         }
     }
@@ -105,20 +110,20 @@ extension FirebaseAuthHelper {
     /// - Parameters:
     ///   - email: Email Address
     ///   - password: Password
-    func signin(email: String, password: String, completion: ((_ success: Bool) -> Void)? = nil) {
+    func signin(email: String, password: String, completion: ((_ error: Error?) -> Void)? = nil) {
         
         Auth.auth().signIn(withEmail: email, password: password) { (authResult, error) in
             // ...
             if let error = error {
                 print("Error: \(error.localizedDescription)")
-                completion?(false)
+                completion?(error)
             }
             else if let user = authResult?.user {
                 // The user's ID, unique to the Firebase project.
                 // Do NOT use this value to authenticate with your backend server,
                 // if you have one. Use getTokenWithCompletion:completion: instead.
                 self.printUserDetails(user, withTag: "Sign In")
-                completion?(true)
+                completion?(nil)
             }
         }
     }
@@ -254,5 +259,6 @@ extension FirebaseAuthHelper {
         print("User email: \(email)")
         print("User photoURL: \(String(describing: photoURL?.description))")
         print("**********************************************************\n\n")
+        
     }
 }

@@ -9,25 +9,37 @@
 /* Begin PBXBuildFile section */
 		2A6F9DDC23B89428EAD244C3 /* Pods_ReverseCollectionView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDF0F065A23545565E65E8FC /* Pods_ReverseCollectionView.framework */; };
 		88082405220E11BB006F5318 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88082404220E11BB006F5318 /* AppDelegate.swift */; };
-		88082407220E11BB006F5318 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88082406220E11BB006F5318 /* ViewController.swift */; };
+		88082407220E11BB006F5318 /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88082406220E11BB006F5318 /* LandingViewController.swift */; };
 		8808240A220E11BB006F5318 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88082408220E11BB006F5318 /* Main.storyboard */; };
 		8808240C220E11BD006F5318 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8808240B220E11BD006F5318 /* Assets.xcassets */; };
 		8808240F220E11BD006F5318 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8808240D220E11BD006F5318 /* LaunchScreen.storyboard */; };
 		88082417220EB733006F5318 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 88082416220EB733006F5318 /* GoogleService-Info.plist */; };
 		88082419220EEBB3006F5318 /* FirebaseAuthHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88082418220EEBB3006F5318 /* FirebaseAuthHelper.swift */; };
+		88082425220F0021006F5318 /* AuthenticationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88082424220F0021006F5318 /* AuthenticationViewController.swift */; };
+		88082428220F093D006F5318 /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88082427220F093D006F5318 /* ViewControllerExtension.swift */; };
+		8808242A220F0D24006F5318 /* CollectionView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88082429220F0D24006F5318 /* CollectionView.storyboard */; };
+		8808242C220F488E006F5318 /* ReverseCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8808242B220F488E006F5318 /* ReverseCollectionViewController.swift */; };
+		8808242E220F48C0006F5318 /* ReverseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8808242D220F48C0006F5318 /* ReverseCollectionViewCell.swift */; };
+		88FA642A220F528F006C6A5D /* ReverseCollectionLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88FA6429220F528F006C6A5D /* ReverseCollectionLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		6F5C671ABCF0088ED1D48FCA /* Pods-ReverseCollectionView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReverseCollectionView.release.xcconfig"; path = "Pods/Target Support Files/Pods-ReverseCollectionView/Pods-ReverseCollectionView.release.xcconfig"; sourceTree = "<group>"; };
 		88082401220E11BB006F5318 /* ReverseCollectionView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReverseCollectionView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88082404220E11BB006F5318 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		88082406220E11BB006F5318 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		88082406220E11BB006F5318 /* LandingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingViewController.swift; sourceTree = "<group>"; };
 		88082409220E11BB006F5318 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8808240B220E11BD006F5318 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8808240E220E11BD006F5318 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		88082410220E11BD006F5318 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		88082416220EB733006F5318 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		88082418220EEBB3006F5318 /* FirebaseAuthHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseAuthHelper.swift; sourceTree = "<group>"; };
+		88082424220F0021006F5318 /* AuthenticationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewController.swift; sourceTree = "<group>"; };
+		88082427220F093D006F5318 /* ViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerExtension.swift; sourceTree = "<group>"; };
+		88082429220F0D24006F5318 /* CollectionView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CollectionView.storyboard; sourceTree = "<group>"; };
+		8808242B220F488E006F5318 /* ReverseCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReverseCollectionViewController.swift; sourceTree = "<group>"; };
+		8808242D220F48C0006F5318 /* ReverseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReverseCollectionViewCell.swift; sourceTree = "<group>"; };
+		88FA6429220F528F006C6A5D /* ReverseCollectionLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReverseCollectionLayout.swift; sourceTree = "<group>"; };
 		DDF0F065A23545565E65E8FC /* Pods_ReverseCollectionView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReverseCollectionView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F26D99CF85FC45BB849CCB7E /* Pods-ReverseCollectionView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReverseCollectionView.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReverseCollectionView/Pods-ReverseCollectionView.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -95,6 +107,7 @@
 		8808241E220EF701006F5318 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				88082426220F08F4006F5318 /* Extension */,
 				88082418220EEBB3006F5318 /* FirebaseAuthHelper.swift */,
 			);
 			path = Helper;
@@ -103,7 +116,9 @@
 		8808241F220EF70A006F5318 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				88082406220E11BB006F5318 /* ViewController.swift */,
+				88082406220E11BB006F5318 /* LandingViewController.swift */,
+				88082424220F0021006F5318 /* AuthenticationViewController.swift */,
+				8808242B220F488E006F5318 /* ReverseCollectionViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -111,6 +126,8 @@
 		88082420220EF71B006F5318 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				8808242D220F48C0006F5318 /* ReverseCollectionViewCell.swift */,
+				88FA6429220F528F006C6A5D /* ReverseCollectionLayout.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -127,6 +144,7 @@
 			children = (
 				88082408220E11BB006F5318 /* Main.storyboard */,
 				8808240D220E11BD006F5318 /* LaunchScreen.storyboard */,
+				88082429220F0D24006F5318 /* CollectionView.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -140,6 +158,14 @@
 				88082416220EB733006F5318 /* GoogleService-Info.plist */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		88082426220F08F4006F5318 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				88082427220F093D006F5318 /* ViewControllerExtension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -204,6 +230,7 @@
 			files = (
 				8808240F220E11BD006F5318 /* LaunchScreen.storyboard in Resources */,
 				88082417220EB733006F5318 /* GoogleService-Info.plist in Resources */,
+				8808242A220F0D24006F5318 /* CollectionView.storyboard in Resources */,
 				8808240C220E11BD006F5318 /* Assets.xcassets in Resources */,
 				8808240A220E11BB006F5318 /* Main.storyboard in Resources */,
 			);
@@ -261,8 +288,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				88082407220E11BB006F5318 /* ViewController.swift in Sources */,
+				8808242E220F48C0006F5318 /* ReverseCollectionViewCell.swift in Sources */,
+				88FA642A220F528F006C6A5D /* ReverseCollectionLayout.swift in Sources */,
+				88082425220F0021006F5318 /* AuthenticationViewController.swift in Sources */,
+				8808242C220F488E006F5318 /* ReverseCollectionViewController.swift in Sources */,
+				88082407220E11BB006F5318 /* LandingViewController.swift in Sources */,
 				88082419220EEBB3006F5318 /* FirebaseAuthHelper.swift in Sources */,
+				88082428220F093D006F5318 /* ViewControllerExtension.swift in Sources */,
 				88082405220E11BB006F5318 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
