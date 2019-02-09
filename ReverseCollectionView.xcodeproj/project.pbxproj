@@ -20,6 +20,7 @@
 		8808242A220F0D24006F5318 /* CollectionView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88082429220F0D24006F5318 /* CollectionView.storyboard */; };
 		8808242C220F488E006F5318 /* ReverseCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8808242B220F488E006F5318 /* ReverseCollectionViewController.swift */; };
 		8808242E220F48C0006F5318 /* ReverseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8808242D220F48C0006F5318 /* ReverseCollectionViewCell.swift */; };
+		8887CBAF220F64D300D0A58F /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8887CBAE220F64D300D0A58F /* Employee.swift */; };
 		88FA642A220F528F006C6A5D /* ReverseCollectionLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88FA6429220F528F006C6A5D /* ReverseCollectionLayout.swift */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +40,7 @@
 		88082429220F0D24006F5318 /* CollectionView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CollectionView.storyboard; sourceTree = "<group>"; };
 		8808242B220F488E006F5318 /* ReverseCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReverseCollectionViewController.swift; sourceTree = "<group>"; };
 		8808242D220F48C0006F5318 /* ReverseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReverseCollectionViewCell.swift; sourceTree = "<group>"; };
+		8887CBAE220F64D300D0A58F /* Employee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Employee.swift; sourceTree = "<group>"; };
 		88FA6429220F528F006C6A5D /* ReverseCollectionLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReverseCollectionLayout.swift; sourceTree = "<group>"; };
 		DDF0F065A23545565E65E8FC /* Pods_ReverseCollectionView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReverseCollectionView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F26D99CF85FC45BB849CCB7E /* Pods-ReverseCollectionView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReverseCollectionView.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReverseCollectionView/Pods-ReverseCollectionView.debug.xcconfig"; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 		88082421220EF723006F5318 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				8887CBAE220F64D300D0A58F /* Employee.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -289,6 +292,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8808242E220F48C0006F5318 /* ReverseCollectionViewCell.swift in Sources */,
+				8887CBAF220F64D300D0A58F /* Employee.swift in Sources */,
 				88FA642A220F528F006C6A5D /* ReverseCollectionLayout.swift in Sources */,
 				88082425220F0021006F5318 /* AuthenticationViewController.swift in Sources */,
 				8808242C220F488E006F5318 /* ReverseCollectionViewController.swift in Sources */,

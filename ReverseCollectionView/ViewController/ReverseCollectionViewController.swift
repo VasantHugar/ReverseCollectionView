@@ -10,13 +10,27 @@ import UIKit
 
 class ReverseCollectionViewController: UIViewController {
     
+    var employees: [Employee] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
         showNavigation()
-    }
     
+        for index in 0...9 {
+            
+            let temp = Employee()
+            temp.id = index
+            temp.name = "Employee \(index)"
+            temp.email = "employee_\(1)@gmail.com"
+            temp.phone = "123455667\(index)"
+            temp.accupation = "Software Developer"
+            temp.profileImage = UIImage(named: "user_image\(index)")
+            
+            employees.append(temp)
+        }
+    }
     
     /*
      // MARK: - Navigation
@@ -31,18 +45,14 @@ class ReverseCollectionViewController: UIViewController {
 
 extension ReverseCollectionViewController: UICollectionViewDataSource {
     
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
-    }
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 6
+        return employees.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ReverseCollectionViewCell"   , for: indexPath) as? ReverseCollectionViewCell {
-            
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ReverseCollectionViewCell", for: indexPath) as? ReverseCollectionViewCell {
+            cell.update(withEmployee: employees[indexPath.row])
             return cell
         }
         return UICollectionViewCell()
