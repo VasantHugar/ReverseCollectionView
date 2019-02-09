@@ -7,14 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A6F9DDC23B89428EAD244C3 /* Pods_ReverseCollectionView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDF0F065A23545565E65E8FC /* Pods_ReverseCollectionView.framework */; };
 		88082405220E11BB006F5318 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88082404220E11BB006F5318 /* AppDelegate.swift */; };
 		88082407220E11BB006F5318 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88082406220E11BB006F5318 /* ViewController.swift */; };
 		8808240A220E11BB006F5318 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88082408220E11BB006F5318 /* Main.storyboard */; };
 		8808240C220E11BD006F5318 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8808240B220E11BD006F5318 /* Assets.xcassets */; };
 		8808240F220E11BD006F5318 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8808240D220E11BD006F5318 /* LaunchScreen.storyboard */; };
+		88082417220EB733006F5318 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 88082416220EB733006F5318 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6F5C671ABCF0088ED1D48FCA /* Pods-ReverseCollectionView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReverseCollectionView.release.xcconfig"; path = "Pods/Target Support Files/Pods-ReverseCollectionView/Pods-ReverseCollectionView.release.xcconfig"; sourceTree = "<group>"; };
 		88082401220E11BB006F5318 /* ReverseCollectionView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReverseCollectionView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88082404220E11BB006F5318 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		88082406220E11BB006F5318 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +25,9 @@
 		8808240B220E11BD006F5318 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8808240E220E11BD006F5318 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		88082410220E11BD006F5318 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		88082416220EB733006F5318 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		DDF0F065A23545565E65E8FC /* Pods_ReverseCollectionView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReverseCollectionView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F26D99CF85FC45BB849CCB7E /* Pods-ReverseCollectionView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReverseCollectionView.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReverseCollectionView/Pods-ReverseCollectionView.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +35,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A6F9DDC23B89428EAD244C3 /* Pods_ReverseCollectionView.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0AB7B5D1CB42090D78C27F63 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DDF0F065A23545565E65E8FC /* Pods_ReverseCollectionView.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3D52601C3C8D0A91BBB43CAC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F26D99CF85FC45BB849CCB7E /* Pods-ReverseCollectionView.debug.xcconfig */,
+				6F5C671ABCF0088ED1D48FCA /* Pods-ReverseCollectionView.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		880823F8220E11BB006F5318 = {
 			isa = PBXGroup;
 			children = (
 				88082403220E11BB006F5318 /* ReverseCollectionView */,
 				88082402220E11BB006F5318 /* Products */,
+				3D52601C3C8D0A91BBB43CAC /* Pods */,
+				0AB7B5D1CB42090D78C27F63 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,6 +86,7 @@
 				8808240B220E11BD006F5318 /* Assets.xcassets */,
 				8808240D220E11BD006F5318 /* LaunchScreen.storyboard */,
 				88082410220E11BD006F5318 /* Info.plist */,
+				88082416220EB733006F5318 /* GoogleService-Info.plist */,
 			);
 			path = ReverseCollectionView;
 			sourceTree = "<group>";
@@ -71,9 +98,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 88082413220E11BD006F5318 /* Build configuration list for PBXNativeTarget "ReverseCollectionView" */;
 			buildPhases = (
+				442B1F8C48E96AB521296C98 /* [CP] Check Pods Manifest.lock */,
 				880823FD220E11BB006F5318 /* Sources */,
 				880823FE220E11BB006F5318 /* Frameworks */,
 				880823FF220E11BB006F5318 /* Resources */,
+				346ED416C75C8E83B76BEF13 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -123,12 +152,56 @@
 			buildActionMask = 2147483647;
 			files = (
 				8808240F220E11BD006F5318 /* LaunchScreen.storyboard in Resources */,
+				88082417220EB733006F5318 /* GoogleService-Info.plist in Resources */,
 				8808240C220E11BD006F5318 /* Assets.xcassets in Resources */,
 				8808240A220E11BB006F5318 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		346ED416C75C8E83B76BEF13 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ReverseCollectionView/Pods-ReverseCollectionView-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ReverseCollectionView/Pods-ReverseCollectionView-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		442B1F8C48E96AB521296C98 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ReverseCollectionView-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		880823FD220E11BB006F5318 /* Sources */ = {
@@ -280,6 +353,7 @@
 		};
 		88082414220E11BD006F5318 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F26D99CF85FC45BB849CCB7E /* Pods-ReverseCollectionView.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -288,7 +362,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.vasant.ReverseCollectionView;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vasant.reversecollectionview;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -297,6 +371,7 @@
 		};
 		88082415220E11BD006F5318 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6F5C671ABCF0088ED1D48FCA /* Pods-ReverseCollectionView.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -305,7 +380,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.vasant.ReverseCollectionView;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vasant.reversecollectionview;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
