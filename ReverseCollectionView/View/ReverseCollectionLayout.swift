@@ -14,10 +14,10 @@ class ReverseCollectionLayout: UICollectionViewLayout {
     
     private var cellSpacing: CGFloat = 10
     
-    private var cellHeight: CGFloat {
+    private var cellWidth: CGFloat {
         
         if let collectionView = self.collectionView {
-
+            
             let totalSpace = cellSpacing * CGFloat(numberOfColumns + 1)
             let availableWidthForCells = collectionView.frame.width - totalSpace
             
@@ -38,9 +38,9 @@ class ReverseCollectionLayout: UICollectionViewLayout {
             
             for section in 0 ..< collectionView.numberOfSections {
                 
-                if let numberOfSectionItems = numberOfItemsInSection(section) {
+                if let numberOfItemsInSection = numberOfItemsInSection(section) {
                     
-                    for item in 0 ..< numberOfSectionItems {
+                    for item in 0 ..< numberOfItemsInSection {
                         
                         let indexPath = IndexPath(item: item, section: section)
                         let layoutAttr = layoutAttributesForItem(at: indexPath)
@@ -52,7 +52,6 @@ class ReverseCollectionLayout: UICollectionViewLayout {
                 }
             }
         }
-        
         return layoutAttrs
     }
     
@@ -67,20 +66,12 @@ class ReverseCollectionLayout: UICollectionViewLayout {
         let isFirstColumnFromRight = indexPath.row % numberOfColumns == 0
         
         layoutAttr.frame = CGRect(
-            x: isFirstColumnFromRight ? cellHeight + (2 * cellSpacing) : cellSpacing,
-            y: contentSize.height - (cellHeight + cellSpacing) * actualRowUnit,
-            width: cellHeight,
-            height: cellHeight)
+            x: !isFirstColumnFromRight ? cellSpacing : cellSpacing + cellWidth + cellSpacing,
+            y: contentSize.height - (cellWidth + cellSpacing) * actualRowUnit,
+            width: cellWidth,
+            height: cellWidth)
         
         return layoutAttr
-    }
-    
-    func numberOfItemsInSection(_ section: Int) -> Int? {
-        
-        if let collectionView = self.collectionView, let numSectionItems = collectionView.dataSource?.collectionView(collectionView, numberOfItemsInSection: section) {
-            return numSectionItems
-        }
-        return 0
     }
     
     override var collectionViewContentSize: CGSize {
@@ -91,8 +82,8 @@ class ReverseCollectionLayout: UICollectionViewLayout {
             
             if let collectionView = self.collectionView {
                 for section in 0 ..< collectionView.numberOfSections {
-                    if let numItems = numberOfItemsInSection(section) {
-                        height += CGFloat(numItems / numberOfColumns) * cellHeight
+                    if let numberOfItemsInSection = numberOfItemsInSection(section) {
+                        height += CGFloat(numberOfItemsInSection / numberOfColumns) * cellWidth
                     }
                 }
                 bounds = collectionView.bounds
@@ -102,10 +93,20 @@ class ReverseCollectionLayout: UICollectionViewLayout {
     }
     
     override func shouldInvalidateLayout(forBoundsChange newBounds: CGRect) -> Bool {
-        
-        if let oldBounds = self.collectionView?.bounds, oldBounds.width != newBounds.width || oldBounds.height != newBounds.height {
+        if let oldBounds = self.collectionView?.bounds, (oldBounds.width != newBounds.width || oldBounds.height != newBounds.height) {
             return true
         }
         return false
+    }
+}
+
+extension ReverseCollectionLayout {
+    
+    private func numberOfItemsInSection(_ section: Int) -> Int? {
+        
+        if let collectionView = self.collectionView, let numSectionItems = collectionView.dataSource?.collectionView(collectionView, numberOfItemsInSection: section) {
+            return numSectionItems
+        }
+        return 0
     }
 }

@@ -27,7 +27,6 @@ class ReverseCollectionViewController: UIViewController {
      // Pass the selected object to the new view controller.
      }
      */
-    
 }
 
 extension ReverseCollectionViewController: UICollectionViewDataSource {
@@ -48,28 +47,6 @@ extension ReverseCollectionViewController: UICollectionViewDataSource {
         }
         return UICollectionViewCell()
     }
-}
-
-extension ReverseCollectionViewController: UICollectionViewDelegateFlowLayout {
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
-        var size: CGSize = CGSize.zero
-        
-        let unit = widthOfCollectionView(collectionView)
-        
-        size.height = unit
-        size.width = unit
-        
-        return size
-    }
-    
-    private func widthOfCollectionView(_ collectionView: UICollectionView) -> CGFloat {
-        
-        let width: CGFloat = (collectionView.frame.width - (10 * 3)) / 2
-        return width
-    }
-    
 }
 
 extension ReverseCollectionViewController: UICollectionViewDelegate {
