@@ -26,9 +26,6 @@ class ReverseCollectionModel {
                 for employee in employees {
                     self.employees.append(Employee(dictionary: employee))
                 }
-                for employee in employees {
-                    self.employees.append(Employee(dictionary: employee))
-                }
             }
             self.completion?()
         }

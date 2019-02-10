@@ -30,6 +30,7 @@ class ReverseCollectionViewController: UIViewController {
     
     @IBAction func logoutAction(_ sender: Any) {
         FirebaseAuthHelper.shared.delete { (success) in
+            self.navigationController?.popToRootViewController(animated: false)
         }
     }
 }

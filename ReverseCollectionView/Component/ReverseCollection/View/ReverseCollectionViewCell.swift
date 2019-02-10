@@ -26,6 +26,8 @@ class ReverseCollectionViewCell: UICollectionViewCell {
         phoneLabel.text = employee.phone
         
         setImage(withURL: employee.pic)
+        
+        self.layoutIfNeeded()
     }
     
     override func layoutSubviews() {

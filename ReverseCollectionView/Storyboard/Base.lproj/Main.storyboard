@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="tkz-hV-bzq">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -23,7 +23,7 @@
                         <viewControllerLayoutGuide type="bottom" id="qoh-jP-nqf"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
@@ -46,11 +46,11 @@
                         <viewControllerLayoutGuide type="bottom" id="bmx-rJ-GR9"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="WOT-NS-dhO">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="omI-WP-jW1">
-                                <rect key="frame" x="231" y="50" width="129" height="29"/>
+                                <rect key="frame" x="176" y="50" width="129" height="29"/>
                                 <segments>
                                     <segment title="Login"/>
                                     <segment title="Register"/>
@@ -61,29 +61,37 @@
                                 </connections>
                             </segmentedControl>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="428-BL-pN4">
-                                <rect key="frame" x="75" y="128" width="225" height="91"/>
+                                <rect key="frame" x="64" y="128" width="192" height="91"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="D0G-M7-4EX">
-                                        <rect key="frame" x="5" y="0.0" width="215" height="45"/>
+                                        <rect key="frame" x="5" y="0.0" width="182" height="45"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="45" id="map-8b-uVp"/>
+                                            <constraint firstAttribute="height" constant="45" id="map-8b-uVp">
+                                                <variation key="heightClass=regular-widthClass=regular" constant="50"/>
+                                            </constraint>
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="jsJ-De-TLC" id="8vQ-wR-A49"/>
+                                        </connections>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Nq-LI-DAT">
-                                        <rect key="frame" x="0.0" y="45" width="225" height="1"/>
+                                        <rect key="frame" x="0.0" y="45" width="192" height="1"/>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="GD1-1U-TTj"/>
                                         </constraints>
                                     </view>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ynM-T7-XY6">
-                                        <rect key="frame" x="5" y="46" width="215" height="45"/>
+                                        <rect key="frame" x="5" y="46" width="182" height="45"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="jsJ-De-TLC" id="khV-Za-q7m"/>
+                                        </connections>
                                     </textField>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -102,10 +110,12 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xma-hw-kx5">
-                                <rect key="frame" x="75" y="249" width="225" height="45"/>
+                                <rect key="frame" x="64" y="249" width="192" height="45"/>
                                 <color key="backgroundColor" red="0.39354130990000002" green="0.76576140640000001" blue="0.48736809949999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="jbF-6Z-Swk"/>
+                                    <constraint firstAttribute="height" constant="45" id="jbF-6Z-Swk">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="50"/>
+                                    </constraint>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="14"/>
                                 <state key="normal" title="Login"/>
@@ -113,20 +123,26 @@
                                     <action selector="loginButtonAction:" destination="jsJ-De-TLC" eventType="touchUpInside" id="0kc-P7-yWn"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="O6O-GM-PmL">
+                                <rect key="frame" x="141.5" y="253" width="37" height="37"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="428-BL-pN4" firstAttribute="width" secondItem="WOT-NS-dhO" secondAttribute="width" multiplier="0.6" id="BsP-gh-4Ql"/>
                             <constraint firstItem="Xma-hw-kx5" firstAttribute="centerX" secondItem="WOT-NS-dhO" secondAttribute="centerX" id="DDz-Pp-Iw2"/>
+                            <constraint firstItem="O6O-GM-PmL" firstAttribute="centerY" secondItem="Xma-hw-kx5" secondAttribute="centerY" id="Dot-wA-2gK"/>
                             <constraint firstItem="428-BL-pN4" firstAttribute="centerX" secondItem="WOT-NS-dhO" secondAttribute="centerX" id="Dwz-DW-GrY"/>
                             <constraint firstItem="omI-WP-jW1" firstAttribute="top" secondItem="tSv-6W-kmc" secondAttribute="bottom" constant="30" id="ED4-TX-7bW"/>
                             <constraint firstItem="Xma-hw-kx5" firstAttribute="leading" secondItem="428-BL-pN4" secondAttribute="leading" id="SEz-eZ-bKJ"/>
                             <constraint firstAttribute="trailing" secondItem="omI-WP-jW1" secondAttribute="trailing" constant="15" id="XwK-U1-H28"/>
                             <constraint firstItem="Xma-hw-kx5" firstAttribute="top" secondItem="428-BL-pN4" secondAttribute="bottom" constant="30" id="aDa-Vf-0Py"/>
+                            <constraint firstItem="O6O-GM-PmL" firstAttribute="centerX" secondItem="Xma-hw-kx5" secondAttribute="centerX" id="qwC-ey-3B5"/>
                             <constraint firstItem="428-BL-pN4" firstAttribute="top" secondItem="omI-WP-jW1" secondAttribute="bottom" constant="50" id="rf4-3Q-hIQ"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="O6O-GM-PmL" id="k8K-0L-dia"/>
                         <outlet property="contentView" destination="428-BL-pN4" id="lop-28-H6z"/>
                         <outlet property="emailTextField" destination="D0G-M7-4EX" id="oLa-C1-ktA"/>
                         <outlet property="loginButton" destination="Xma-hw-kx5" id="LTe-3i-CWK"/>

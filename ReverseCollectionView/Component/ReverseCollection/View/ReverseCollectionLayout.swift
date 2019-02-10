@@ -83,7 +83,7 @@ class ReverseCollectionLayout: UICollectionViewLayout {
             if let collectionView = self.collectionView {
                 for section in 0 ..< collectionView.numberOfSections {
                     if let numberOfItemsInSection = numberOfItemsInSection(section) {
-                        let actualRow = CGFloat(numberOfItemsInSection / numberOfColumns)
+                        let actualRow = CGFloat(numberOfItemsInSection / numberOfColumns) + CGFloat(numberOfItemsInSection % numberOfColumns == 0 ? 0 : 1)
                         height += actualRow * cellWidth + (actualRow + 1) * cellSpacing
                     }
                 }

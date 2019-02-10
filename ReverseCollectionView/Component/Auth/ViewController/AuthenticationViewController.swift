@@ -17,6 +17,7 @@ class AuthenticationViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     
     @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     enum AuthenticationType: Int {
         case login = 0
@@ -36,7 +37,34 @@ class AuthenticationViewController: UIViewController {
     }
     
     @IBAction func loginButtonAction(_ sender: Any) {
+        view.endEditing(true)
         checkMandatoryData()
+    }
+}
+
+extension AuthenticationViewController: UITextFieldDelegate {
+    
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        return true
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        switch textField {
+        case emailTextField:
+            passwordTextField.becomeFirstResponder()
+            break
+            
+        case passwordTextField:
+            self.view.endEditing(true)
+            checkMandatoryData()
+            break
+        
+        default:
+            self.view.endEditing(true)
+            break
+        }
+        return true
     }
 }
 
@@ -85,6 +113,9 @@ extension AuthenticationViewController {
     ///   - password: Password
     private func authenticate(withEmail email: String, andPassword password: String) {
         
+        loginButton.isEnabled = false
+        activityIndicator.startAnimating()
+        
         switch AuthenticationType(rawValue: segmentControl.selectedSegmentIndex)! {
         case .login:
             login(withEmail: email, andPassword: password)
@@ -109,6 +140,8 @@ extension AuthenticationViewController {
             } else {
                 self.goToCollectionViewController()
             }
+            self.loginButton.isEnabled = true
+            self.activityIndicator.stopAnimating()
         }
     }
     
@@ -125,6 +158,8 @@ extension AuthenticationViewController {
             } else {
                 self.goToCollectionViewController()
             }
+            self.loginButton.isEnabled = true
+            self.activityIndicator.stopAnimating()
         }
     }
     
