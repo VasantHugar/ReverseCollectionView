@@ -6,7 +6,6 @@
 //  Copyright © 2019 Vasant Hugar. All rights reserved.
 //
 
-import UIKit
 import Firebase
 
 class FirebaseAuthHelper: NSObject {
@@ -226,7 +225,7 @@ extension FirebaseAuthHelper {
     }
     
     /// You can delete a user account with the deleteWithCompletion method.
-    func delete() {
+    func delete(_ completion: @escaping (_ success: Bool) -> Void) {
         
         let user = Auth.auth().currentUser
         
@@ -234,9 +233,11 @@ extension FirebaseAuthHelper {
             print("\n**********************************************************")
             if let error = error {
                 print("Error Deleting account: \(error.localizedDescription)")
+                completion(true)
             }
             else {
                 print("Account Deleted Successfully.")
+                completion(false)
             }
             print("**********************************************************\n")
         }
@@ -259,6 +260,5 @@ extension FirebaseAuthHelper {
         print("User email: \(email)")
         print("User photoURL: \(String(describing: photoURL?.description))")
         print("**********************************************************\n\n")
-        
     }
 }

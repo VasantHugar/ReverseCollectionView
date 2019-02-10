@@ -21,6 +21,9 @@
 		8808242C220F488E006F5318 /* ReverseCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8808242B220F488E006F5318 /* ReverseCollectionViewController.swift */; };
 		8808242E220F48C0006F5318 /* ReverseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8808242D220F48C0006F5318 /* ReverseCollectionViewCell.swift */; };
 		8887CBAF220F64D300D0A58F /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8887CBAE220F64D300D0A58F /* Employee.swift */; };
+		88ACA68722109FB10079ED66 /* ImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88ACA68622109FB10079ED66 /* ImageViewExtension.swift */; };
+		88ACA6892210A1E70079ED66 /* ReverseCollectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88ACA6882210A1E70079ED66 /* ReverseCollectionModel.swift */; };
+		88ACA6952210B6770079ED66 /* FirebaseRealtimeDatabaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88ACA6942210B6770079ED66 /* FirebaseRealtimeDatabaseHelper.swift */; };
 		88FA642A220F528F006C6A5D /* ReverseCollectionLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88FA6429220F528F006C6A5D /* ReverseCollectionLayout.swift */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +44,9 @@
 		8808242B220F488E006F5318 /* ReverseCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReverseCollectionViewController.swift; sourceTree = "<group>"; };
 		8808242D220F48C0006F5318 /* ReverseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReverseCollectionViewCell.swift; sourceTree = "<group>"; };
 		8887CBAE220F64D300D0A58F /* Employee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Employee.swift; sourceTree = "<group>"; };
+		88ACA68622109FB10079ED66 /* ImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewExtension.swift; sourceTree = "<group>"; };
+		88ACA6882210A1E70079ED66 /* ReverseCollectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReverseCollectionModel.swift; sourceTree = "<group>"; };
+		88ACA6942210B6770079ED66 /* FirebaseRealtimeDatabaseHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseRealtimeDatabaseHelper.swift; sourceTree = "<group>"; };
 		88FA6429220F528F006C6A5D /* ReverseCollectionLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReverseCollectionLayout.swift; sourceTree = "<group>"; };
 		DDF0F065A23545565E65E8FC /* Pods_ReverseCollectionView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReverseCollectionView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F26D99CF85FC45BB849CCB7E /* Pods-ReverseCollectionView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReverseCollectionView.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReverseCollectionView/Pods-ReverseCollectionView.debug.xcconfig"; sourceTree = "<group>"; };
@@ -96,9 +102,7 @@
 		88082403220E11BB006F5318 /* ReverseCollectionView */ = {
 			isa = PBXGroup;
 			children = (
-				88082421220EF723006F5318 /* Model */,
-				88082420220EF71B006F5318 /* View */,
-				8808241F220EF70A006F5318 /* ViewController */,
+				88ACA68C2210B59F0079ED66 /* Component */,
 				8808241E220EF701006F5318 /* Helper */,
 				88082422220EF752006F5318 /* Storyboard */,
 				88082423220EF769006F5318 /* Resources */,
@@ -110,7 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				88082426220F08F4006F5318 /* Extension */,
-				88082418220EEBB3006F5318 /* FirebaseAuthHelper.swift */,
+				88ACA6932210B64C0079ED66 /* Firebase */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -120,7 +124,6 @@
 			children = (
 				88082406220E11BB006F5318 /* LandingViewController.swift */,
 				88082424220F0021006F5318 /* AuthenticationViewController.swift */,
-				8808242B220F488E006F5318 /* ReverseCollectionViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -128,18 +131,8 @@
 		88082420220EF71B006F5318 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				8808242D220F48C0006F5318 /* ReverseCollectionViewCell.swift */,
-				88FA6429220F528F006C6A5D /* ReverseCollectionLayout.swift */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		88082421220EF723006F5318 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				8887CBAE220F64D300D0A58F /* Employee.swift */,
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		88082422220EF752006F5318 /* Storyboard */ = {
@@ -167,8 +160,80 @@
 			isa = PBXGroup;
 			children = (
 				88082427220F093D006F5318 /* ViewControllerExtension.swift */,
+				88ACA68622109FB10079ED66 /* ImageViewExtension.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		88ACA68C2210B59F0079ED66 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				88ACA68E2210B5CA0079ED66 /* ReverseCollection */,
+				88ACA68D2210B5B20079ED66 /* Auth */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
+		88ACA68D2210B5B20079ED66 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				88ACA6922210B61E0079ED66 /* Model */,
+				88082420220EF71B006F5318 /* View */,
+				8808241F220EF70A006F5318 /* ViewController */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		88ACA68E2210B5CA0079ED66 /* ReverseCollection */ = {
+			isa = PBXGroup;
+			children = (
+				88ACA6912210B5EA0079ED66 /* View */,
+				88ACA6902210B5E30079ED66 /* Model */,
+				88ACA68F2210B5DB0079ED66 /* Controller */,
+			);
+			path = ReverseCollection;
+			sourceTree = "<group>";
+		};
+		88ACA68F2210B5DB0079ED66 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8808242B220F488E006F5318 /* ReverseCollectionViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		88ACA6902210B5E30079ED66 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8887CBAE220F64D300D0A58F /* Employee.swift */,
+				88ACA6882210A1E70079ED66 /* ReverseCollectionModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		88ACA6912210B5EA0079ED66 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8808242D220F48C0006F5318 /* ReverseCollectionViewCell.swift */,
+				88FA6429220F528F006C6A5D /* ReverseCollectionLayout.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		88ACA6922210B61E0079ED66 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		88ACA6932210B64C0079ED66 /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				88082418220EEBB3006F5318 /* FirebaseAuthHelper.swift */,
+				88ACA6942210B6770079ED66 /* FirebaseRealtimeDatabaseHelper.swift */,
+			);
+			path = Firebase;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -291,10 +356,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88ACA6952210B6770079ED66 /* FirebaseRealtimeDatabaseHelper.swift in Sources */,
 				8808242E220F48C0006F5318 /* ReverseCollectionViewCell.swift in Sources */,
 				8887CBAF220F64D300D0A58F /* Employee.swift in Sources */,
 				88FA642A220F528F006C6A5D /* ReverseCollectionLayout.swift in Sources */,
+				88ACA68722109FB10079ED66 /* ImageViewExtension.swift in Sources */,
 				88082425220F0021006F5318 /* AuthenticationViewController.swift in Sources */,
+				88ACA6892210A1E70079ED66 /* ReverseCollectionModel.swift in Sources */,
 				8808242C220F488E006F5318 /* ReverseCollectionViewController.swift in Sources */,
 				88082407220E11BB006F5318 /* LandingViewController.swift in Sources */,
 				88082419220EEBB3006F5318 /* FirebaseAuthHelper.swift in Sources */,

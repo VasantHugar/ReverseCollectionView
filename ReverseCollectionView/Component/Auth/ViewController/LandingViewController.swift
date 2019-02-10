@@ -14,9 +14,20 @@ class LandingViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         hideNavigation()
+        checkForAuth()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
+}
+
+extension LandingViewController {
+    
+    /// Check if Authentication if Auth presents go to CollectiveView else go Login
+    private func checkForAuth() {
         
         FirebaseAuthHelper.shared.addChangeListener()
-        //        FirebaseAuthHelper.shared.delete()
         
         UIView.animate(withDuration: 0.3) {
             if FirebaseAuthHelper.shared.userId == nil {
@@ -25,10 +36,6 @@ class LandingViewController: UIViewController {
                 self.performSegue(withIdentifier: "LandingToCollectionSegue", sender: nil)
             }
         }
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
     }
 }
 

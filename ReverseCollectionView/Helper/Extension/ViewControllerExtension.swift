@@ -10,7 +10,11 @@ import UIKit
 
 extension UIViewController {
     
-    // MARK: - Alert Message
+    /// Show Alert
+    ///
+    /// - Parameters:
+    ///   - title: Title
+    ///   - message: message
     func showAlert(_ title: String = "", message: String) {
         
         // create the alert
@@ -25,11 +29,13 @@ extension UIViewController {
         self.present(alertController, animated: true, completion: nil)
     }
     
+    /// Show Navigation
     func showNavigation() {
         self.navigationController?.setNavigationBarHidden(false, animated: false);
         self.navigationController?.navigationBar.isTranslucent = false
     }
     
+    /// Hide Navigation
     func hideNavigation() {
         self.navigationController?.setNavigationBarHidden(true, animated: false);
         self.navigationController?.navigationBar.isTranslucent = true

@@ -27,15 +27,7 @@ class AuthenticationViewController: UIViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        
-        contentView?.layer.borderColor = UIColor.lightGray.cgColor
-        contentView?.layer.borderWidth = 1.0
-        contentView?.layer.cornerRadius = 5.0
-        contentView?.layer.masksToBounds = true
-        
-        loginButton.layer.cornerRadius = 5.0
-        loginButton.layer.masksToBounds = true
-        
+        setUIContent()
         updateButtonTitle()
     }
     
@@ -46,26 +38,29 @@ class AuthenticationViewController: UIViewController {
     @IBAction func loginButtonAction(_ sender: Any) {
         checkMandatoryData()
     }
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
 }
 
 extension AuthenticationViewController {
     
+    /// Set Default Content
+    private func setUIContent() {
+        
+        contentView?.layer.borderColor = UIColor.lightGray.cgColor
+        contentView?.layer.borderWidth = 1.0
+        contentView?.layer.cornerRadius = 5.0
+        contentView?.layer.masksToBounds = true
+        
+        loginButton.layer.cornerRadius = 5.0
+        loginButton.layer.masksToBounds = true
+    }
+    
+    /// Update Login or Register button based on Switch enabled
     private func updateButtonTitle() {
         let selectedIndex = segmentControl.selectedSegmentIndex
         loginButton.setTitle(segmentControl.titleForSegment(at: selectedIndex), for: .normal)
     }
     
+    /// Check Mandatory Data entered and Show alert
     private func checkMandatoryData() {
         
         guard let email = emailTextField.text, email.count != 0 else {
@@ -79,32 +74,61 @@ extension AuthenticationViewController {
         }
         authenticate(withEmail: email, andPassword: password)
     }
+}
+
+extension AuthenticationViewController {
     
+    /// Decide type what type of action to be done, Create or Login
+    ///
+    /// - Parameters:
+    ///   - email: Email
+    ///   - password: Password
     private func authenticate(withEmail email: String, andPassword password: String) {
         
         switch AuthenticationType(rawValue: segmentControl.selectedSegmentIndex)! {
         case .login:
-            FirebaseAuthHelper.shared.signin(email: email, password: password) { (error) in
-                if let error = error {
-                    self.showAlert("Error", message: error.localizedDescription)
-                } else {
-                    self.goToCollectionViewController()
-                }
-            }
+            login(withEmail: email, andPassword: password)
             break
             
         case .register:
-            FirebaseAuthHelper.shared.createUser(email: email, password: password) { (error) in
-                if let error = error {
-                    self.showAlert("Error", message: error.localizedDescription)
-                } else {
-                    self.goToCollectionViewController()
-                }
-            }
+            createUser(withEmail: email, andPassword: password)
             break
         }
     }
     
+    /// Login
+    ///
+    /// - Parameters:
+    ///   - email: Email
+    ///   - password: Password
+    private func login(withEmail email: String, andPassword password: String) {
+        
+        FirebaseAuthHelper.shared.signin(email: email, password: password) { (error) in
+            if let error = error {
+                self.showAlert("Error", message: error.localizedDescription)
+            } else {
+                self.goToCollectionViewController()
+            }
+        }
+    }
+    
+    /// Create User
+    ///
+    /// - Parameters:
+    ///   - email: Email
+    ///   - password: Password
+    private func createUser(withEmail email: String, andPassword password: String) {
+        
+        FirebaseAuthHelper.shared.createUser(email: email, password: password) { (error) in
+            if let error = error {
+                self.showAlert("Error", message: error.localizedDescription)
+            } else {
+                self.goToCollectionViewController()
+            }
+        }
+    }
+    
+    /// Go to CollectionView
     private func goToCollectionViewController() {
         performSegue(withIdentifier: "ToCollectionSegue", sender: nil)
     }
