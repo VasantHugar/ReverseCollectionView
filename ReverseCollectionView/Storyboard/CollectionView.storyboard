@@ -56,7 +56,7 @@
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NCk-98-Keg">
                                                                     <rect key="frame" x="0.0" y="0.0" width="148" height="24.5"/>
-                                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
@@ -74,6 +74,16 @@
                                                                 </label>
                                                             </subviews>
                                                         </stackView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FbC-an-ixv">
+                                                            <rect key="frame" x="5" y="5" width="22" height="22"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" secondItem="FbC-an-ixv" secondAttribute="height" multiplier="1:1" id="aet-ZY-veC"/>
+                                                                <constraint firstAttribute="width" constant="22" id="b41-eE-YFd"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
@@ -81,7 +91,9 @@
                                                         <constraint firstItem="bps-Ou-bNY" firstAttribute="leading" secondItem="dc9-oz-k1U" secondAttribute="leading" constant="40" id="5wr-bd-DPJ"/>
                                                         <constraint firstAttribute="bottom" secondItem="jV9-fp-0NA" secondAttribute="bottom" constant="10" id="Jcl-VW-kpg"/>
                                                         <constraint firstItem="jV9-fp-0NA" firstAttribute="centerX" secondItem="dc9-oz-k1U" secondAttribute="centerX" id="Q9P-Hx-P15"/>
+                                                        <constraint firstItem="FbC-an-ixv" firstAttribute="top" secondItem="dc9-oz-k1U" secondAttribute="top" constant="5" id="Qqb-a8-93p"/>
                                                         <constraint firstItem="jV9-fp-0NA" firstAttribute="leading" secondItem="dc9-oz-k1U" secondAttribute="leading" constant="5" id="S2Z-9K-sSe"/>
+                                                        <constraint firstItem="FbC-an-ixv" firstAttribute="leading" secondItem="dc9-oz-k1U" secondAttribute="leading" constant="5" id="cLn-O7-cvX"/>
                                                         <constraint firstItem="bps-Ou-bNY" firstAttribute="centerX" secondItem="dc9-oz-k1U" secondAttribute="centerX" id="cmu-GP-mJD"/>
                                                         <constraint firstItem="bps-Ou-bNY" firstAttribute="top" secondItem="dc9-oz-k1U" secondAttribute="top" constant="10" id="dNQ-Mz-8AT"/>
                                                         <constraint firstItem="mEk-Rx-yRR" firstAttribute="centerY" secondItem="bps-Ou-bNY" secondAttribute="centerY" id="m8m-Dn-bQr"/>
@@ -101,6 +113,7 @@
                                             <outlet property="activityIndicator" destination="mEk-Rx-yRR" id="R2g-OW-V9M"/>
                                             <outlet property="emailLabel" destination="oPk-hH-UzW" id="8X6-Uy-uJq"/>
                                             <outlet property="imageView" destination="bps-Ou-bNY" id="Qrm-le-TmT"/>
+                                            <outlet property="indexLabel" destination="FbC-an-ixv" id="mEg-ng-7rX"/>
                                             <outlet property="nameLabel" destination="NCk-98-Keg" id="wkh-3q-Msy"/>
                                             <outlet property="phoneLabel" destination="XJr-dg-nAl" id="T0E-LS-MZr"/>
                                         </connections>

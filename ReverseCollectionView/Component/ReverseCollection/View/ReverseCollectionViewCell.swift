@@ -14,6 +14,7 @@ class ReverseCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var phoneLabel: UILabel!
+    @IBOutlet weak var indexLabel: UILabel!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     /// Update Cell content with Employee Object
@@ -27,12 +28,15 @@ class ReverseCollectionViewCell: UICollectionViewCell {
         
         setImage(withURL: employee.pic)
         
+        indexLabel.text = tag.description
+        
         self.layoutIfNeeded()
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
         imageView.rounded()
+        indexLabel.rounded()
     }
 }
 

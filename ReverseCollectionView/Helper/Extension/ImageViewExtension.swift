@@ -37,6 +37,9 @@ extension UIImageView {
             }
             }.resume()
     }
+}
+
+extension UIView {
     
     /// Make View Rounded
     func rounded() {

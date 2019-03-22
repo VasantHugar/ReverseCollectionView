@@ -67,6 +67,7 @@ extension ReverseCollectionViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ReverseCollectionViewCell", for: indexPath) as? ReverseCollectionViewCell {
+            cell.tag = indexPath.row
             cell.update(withEmployee: model.employees[indexPath.row])
             return cell
         }
