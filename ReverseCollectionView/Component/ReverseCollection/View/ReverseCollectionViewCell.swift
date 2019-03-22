@@ -50,7 +50,9 @@ extension ReverseCollectionViewCell {
         
         activityIndicator.startAnimating()
         imageView.setImage(from: url) {
-            self.activityIndicator.stopAnimating()
+            DispatchQueue.main.async {
+                self.activityIndicator.stopAnimating()
+            }
         }
     }
 }

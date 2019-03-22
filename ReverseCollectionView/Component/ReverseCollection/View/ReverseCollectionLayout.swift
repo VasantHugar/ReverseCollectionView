@@ -10,9 +10,9 @@ import UIKit
 
 class ReverseCollectionLayout: UICollectionViewLayout {
     
-    private var numberOfColumns = 2
+    private let numberOfColumns = 3
     
-    private var cellSpacing: CGFloat = 10
+    private let cellSpacing: CGFloat = 5
     
     private var cellWidth: CGFloat {
         
@@ -60,16 +60,16 @@ class ReverseCollectionLayout: UICollectionViewLayout {
         let layoutAttr = UICollectionViewLayoutAttributes(forCellWith: indexPath)
         let contentSize = self.collectionViewContentSize
         
-        let actualRow = (indexPath.item / numberOfColumns)
-        let actualRowUnit = CGFloat(actualRow + 1)
+        let rowIndex = (indexPath.item / numberOfColumns)
+        print("Row Index: \(rowIndex)")
         
-        let isFirstColumnFromRight = indexPath.row % numberOfColumns == 0
+        let columnIndex = numberOfColumns - (indexPath.row % numberOfColumns + 1)
+        print("Column Index: \(columnIndex)")
         
-        layoutAttr.frame = CGRect(
-            x: !isFirstColumnFromRight ? cellSpacing : cellSpacing + cellWidth + cellSpacing,
-            y: contentSize.height - (cellWidth + cellSpacing) * actualRowUnit,
-            width: cellWidth,
-            height: cellWidth)
+        layoutAttr.frame = CGRect(x: cellSpacing + ((cellWidth + cellSpacing) * CGFloat(columnIndex)),
+                                  y: contentSize.height - (cellWidth + cellSpacing) * CGFloat(rowIndex + 1),
+                                  width: cellWidth,
+                                  height: cellWidth)
         
         return layoutAttr
     }
