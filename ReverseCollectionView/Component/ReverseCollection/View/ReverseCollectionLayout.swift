@@ -26,6 +26,10 @@ class ReverseCollectionLayout: UICollectionViewLayout {
         return CGFloat.leastNonzeroMagnitude
     }
     
+    private var cellHeight: CGFloat {
+        return cellWidth + 10
+    }
+    
     override func prepare() {
         super.prepare()
     }
@@ -67,9 +71,9 @@ class ReverseCollectionLayout: UICollectionViewLayout {
         print("Column Index: \(columnIndex)")
         
         layoutAttr.frame = CGRect(x: cellSpacing + ((cellWidth + cellSpacing) * CGFloat(columnIndex)),
-                                  y: contentSize.height - (cellWidth + cellSpacing) * CGFloat(rowIndex + 1),
+                                  y: contentSize.height - (cellHeight + cellSpacing) * CGFloat(rowIndex + 1),
                                   width: cellWidth,
-                                  height: cellWidth)
+                                  height: cellHeight)
         
         return layoutAttr
     }
@@ -84,7 +88,7 @@ class ReverseCollectionLayout: UICollectionViewLayout {
                 for section in 0 ..< collectionView.numberOfSections {
                     if let numberOfItemsInSection = numberOfItemsInSection(section) {
                         let actualRow = CGFloat(numberOfItemsInSection / numberOfColumns) + CGFloat(numberOfItemsInSection % numberOfColumns == 0 ? 0 : 1)
-                        height += actualRow * cellWidth + (actualRow + 1) * cellSpacing
+                        height += actualRow * cellHeight + (actualRow + 1) * cellSpacing
                     }
                 }
                 bounds = collectionView.bounds

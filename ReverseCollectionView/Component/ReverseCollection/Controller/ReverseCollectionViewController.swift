@@ -23,6 +23,25 @@ class ReverseCollectionViewController: UIViewController {
         addListener()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(handleOrientationChanged),
+                                               name: UIDevice.orientationDidChangeNotification,
+                                               object: nil)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        NotificationCenter.default.removeObserver(self,
+                                                  name: UIDevice.orientationDidChangeNotification,
+                                                  object: nil)
+    }
+    
+    @objc func handleOrientationChanged() {
+        collectionView.reloadData()
+    }
+    
     @IBAction func refreshAction(_ sender: Any) {
         activityIndicator.startAnimating()
         model.refresh()
@@ -48,7 +67,7 @@ extension ReverseCollectionViewController {
     
     /// Scroll First indexPath to Bottom
     private func scrollToBottom() {
-
+        
         if model.employees.count != 0 {
             let indexPath = IndexPath(row: 0, section: 0)
             self.collectionView.selectItem(at: indexPath,
