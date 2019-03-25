@@ -10,9 +10,9 @@ import UIKit
 
 class ReverseCollectionLayout: UICollectionViewLayout {
     
-    private let numberOfColumns = 3
+    var numberOfColumns = 2
     
-    private let cellSpacing: CGFloat = 5
+    var cellSpacing: CGFloat = 5
     
     private var cellWidth: CGFloat {
         

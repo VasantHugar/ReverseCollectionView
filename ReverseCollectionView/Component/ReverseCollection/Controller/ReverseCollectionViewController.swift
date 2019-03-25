@@ -15,12 +15,20 @@ class ReverseCollectionViewController: UIViewController {
     
     private var model = ReverseCollectionModel()
     
+    private let numberOfColumns = 2
+    private let cellSpacing: CGFloat = 5
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
         showNavigation()
         addListener()
+        
+        if let layout = collectionView.collectionViewLayout as? ReverseCollectionLayout {
+            layout.numberOfColumns = numberOfColumns
+            layout.cellSpacing = cellSpacing
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
